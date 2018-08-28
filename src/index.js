@@ -42,7 +42,7 @@ module.exports = function SitemapGenerator(uri, opts) {
     options.changeFreq = validChangeFreq(opts.changeFreq);
   }
 
-  const emitter = mitt();
+  const emitter = (mitt.default || mitt)();
 
   const parsedUrl = parseURL(
     normalizeUrl(uri, {
